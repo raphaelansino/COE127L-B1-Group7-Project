@@ -1,4 +1,4 @@
-Design of Experiment 
+<b>Design of Experiment</b>
 
 In Partial Requirement for COE127L
 
