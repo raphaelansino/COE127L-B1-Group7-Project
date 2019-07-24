@@ -1,10 +1,14 @@
-<b><t>Design of Experiment</b></t>
+<b>Design of Experiment</b>
 
 
-<i><t>In Partial Requirement for COE127L</t></i>
+
+<i>In Partial Requirement for COE127L</i>
 
 
-<i><t>Section B1</t></i>
+
+
+
+<i>Section B1</i>
 
 Word Frequency Checker using Code Parallelization via OpenMP
 
