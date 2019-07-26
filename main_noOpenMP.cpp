@@ -113,7 +113,7 @@ int main()
     free(filename_list_array);
 
     auto end=get_time::now();
-    auto diff=((end-start)*3);
+    auto diff=end-start;
     cout<<"Elapsed Time is : "<<chrono::duration_cast<ns>(diff).count()<<" ms"<<endl;
     cout << "\nThe result can be found in output.txt ." << endl;
 
