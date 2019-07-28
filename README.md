@@ -5,4 +5,5 @@
 All codes are made with CODE::BLOCKS<br/>
 Not all files are compiled in windows, others are compiled in a Linux Terminal
 
-Note: The C++ Version of the program is on Branch file named 'Rap'
+Only the final project with OpenMP is in the master branch.<br/>
+The other codes that were used are inside the branch of the final person who changed it.<br/>
