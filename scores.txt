@@ -1,2 +1,0 @@
-drogon;20
-dracarys;100
