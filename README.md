@@ -2,5 +2,5 @@
 
 <b><i>A partial requirement in COE127L</i></b>
 
-All codes are made with CODE::BLOCKS
+All codes are made with CODE::BLOCKS<br/>
 Not all files are compiled in windows, others are compiled in a Linux Terminal
