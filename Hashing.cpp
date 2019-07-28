@@ -1,10 +1,9 @@
 #include "Hashing.h"
 #include <iostream>
 #include <cstring>
-#include <chrono>
+#include <omp.h>
 
 using namespace std;
-
 
 #define FILENAME_LEN 50
 #define FILENAME_NUM 100
@@ -136,6 +135,7 @@ void Hashing::mapperFunc(int index)
 	nextWord = strtok(text[index], " \r\n");
 	while (nextWord != NULL)
 	{
+#pragma omp critical //directive identifies a section of code that must be executed by a single thread at a time.
 		{
 			if (hashTableLookupFunc(nextWord, index) == NULL)
 			{
@@ -153,10 +153,12 @@ void Hashing::mapperFunc(int index)
 void Hashing::reducerFunc(int reduceCount)
 {
 	int i, j;
+#pragma omp parallel for
 	for (i = 0; i < reduceCount; ++i)
 	{
 		for (j = 0; j < HASH_TABLE_MAX_SIZE; j++)
 		{
+#pragma omp critical
 			if (hashTable[i][j])
 			{
 				Node* pHead = hashTable[i][j];
@@ -180,7 +182,8 @@ void Hashing::writerFunc(FILE * fp)
 {
 	int i;
 	Node* p;
-	fprintf(fp, "------Word Count Results------ \n------------------------------\n");
+	fprintf(fp, "------print the result------ \n");
+#pragma omp critical
 	{
 		for (i = 0; i < HASH_TABLE_MAX_SIZE; ++i)
 		{
@@ -210,7 +213,7 @@ void Hashing::hashTablePrintFunc(int index)
 			pHead = hashTable[index][i];
 			while (pHead)
 			{
-				printf("Word:  %s  ,  count: %d ", pHead->Key, pHead->Value);
+				printf("Word: %s, count: %d ", pHead->Key, pHead->Value);
 				pHead = pHead->pNext;
 				printf("\n");
 			}
