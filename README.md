@@ -4,3 +4,5 @@
 
 All codes are made with CODE::BLOCKS<br/>
 Not all files are compiled in windows, others are compiled in a Linux Terminal
+
+Note: The C++ Version of the program is on Branch file named 'Rap'
